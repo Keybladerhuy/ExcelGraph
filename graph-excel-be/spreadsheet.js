@@ -1,6 +1,7 @@
 import GoogleSpreadsheet from 'google-spreadsheet';
 import creds from './client_secret.json';
 const promisify = f => (...args) => new Promise((a,b)=>f(...args, (err, res) => err ? b(err) : a(res)));
+const GoogleSpreadsheetURLSubstr = '1r02yIW2mcrjPRXSFzS-yhDERObquGxvkGt2uOXUG7Lo'; // Can make this dynamic
 
 class SpreadsheetAPI {
     promisify;
@@ -12,7 +13,8 @@ class SpreadsheetAPI {
     }
 
     async accessSpreadsheet() {
-        const doc = new GoogleSpreadsheet('1r02yIW2mcrjPRXSFzS-yhDERObquGxvkGt2uOXUG7Lo'); // This is in the url.
+        const doc = new GoogleSpreadsheet(GoogleSpreadsheetURLSubstr); // This is in the url.
+
         await promisify(doc.useServiceAccountAuth)(creds);
         const info = await promisify(doc.getInfo)();
         const sheet = info.worksheets[0];
@@ -23,7 +25,7 @@ class SpreadsheetAPI {
     }
 
     async getRows() {
-        const doc = new GoogleSpreadsheet('1r02yIW2mcrjPRXSFzS-yhDERObquGxvkGt2uOXUG7Lo');
+        const doc = new GoogleSpreadsheet(GoogleSpreadsheetURLSubstr);
         await promisify(doc.useServiceAccountAuth)(creds);
         const info = await promisify(doc.getInfo)();
         const sheet = info.worksheets[0];
@@ -31,7 +33,7 @@ class SpreadsheetAPI {
         const rows = await promisify(sheet.getRows)({
             offset: 1
         });
-        console.log(rows);
+        return rows;
     }
 }
 

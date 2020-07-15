@@ -1,6 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { SplitComponent, SplitAreaDirective } from 'angular-split';
-// import { SplitService } from './shared/services/split.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +8,6 @@ import { SplitComponent, SplitAreaDirective } from 'angular-split';
 export class AppComponent {
 
   constructor(
-    // public split: SplitService // Maybe turn into component
   ) { }
 
   title = 'graph-excel-fe';
