@@ -24,8 +24,15 @@ export class APIService {
 
   get(url: string): Observable<any> {
     // return this.http.get(`${this.environment.endpoint}${url}`); // JSON
-    return this.http.get(`${this.environment.endpoint}${url}`, {responseType: 'text'}); // TEXT
+    console.log('Making GET API call to...');
+    console.log(`${this.environment.endpoint}${url}`);
+    return this.http.get(`${this.environment.endpoint}${url}`, {responseType: 'json'}); // TEXT
   }
 
+  post(url: string, params?:any): Observable<any> {
+    // return this.http.get(`${this.environment.endpoint}${url}`); // JSON
+    console.log(`${this.environment.endpoint}${url}`);
+    return this.http.get(`${this.environment.endpoint}${url}`, {responseType: 'json'}); // TEXT
+  }
 
 }

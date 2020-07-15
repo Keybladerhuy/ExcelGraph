@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~9.0.3",
     "@angular/platform-browser-dynamic": "~9.0.3",
     "@angular/router": "~9.0.3",
+    "ag-grid-angular": "^23.2.1",
+    "ag-grid-community": "^23.2.1",
     "angular-split": "^3.0.3",
     "fomantic-ui": "^2.8.6",
     "jquery": "^3.5.1",

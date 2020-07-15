@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 
 // Modules
 import { SharedModule } from './shared/shared.module';
+import { DataAnalysisModule } from './extensions/data-analysis/data-analysis.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     AppRoutingModule,
     SharedModule,
+    DataAnalysisModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
