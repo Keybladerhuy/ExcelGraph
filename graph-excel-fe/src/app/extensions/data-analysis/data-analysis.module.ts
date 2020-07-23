@@ -6,9 +6,7 @@ import { SharedModule } from '../../shared/shared.module';
 
 import { DataAnalysisComponent } from './data-analysis.component';
 import { BaseStatsComponent } from './components/base-stats/base-stats.component';
-
-// Libraries
-
+import { RoleComponent } from './components/role/role.component';
 
 const routes: Routes = [
   {
@@ -18,21 +16,20 @@ const routes: Routes = [
       title: 'Data Analysis'
     },
     children: [
-        // { path: '', pathMatch: 'full', component: BaseStatsComponent },
         { path: 'BaseStats', component: BaseStatsComponent },
+        { path: 'Role', component: RoleComponent },
     ]
   }
 ]
 
 @NgModule({
-  declarations: [BaseStatsComponent, DataAnalysisComponent],
+  declarations: [BaseStatsComponent, DataAnalysisComponent, RoleComponent],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule.forChild(routes),
   ],
-  exports: [BaseStatsComponent, DataAnalysisComponent], 
+  // exports: [BaseStatsComponent, DataAnalysisComponent], 
   // providers: []
-
 })
 export class DataAnalysisModule { }

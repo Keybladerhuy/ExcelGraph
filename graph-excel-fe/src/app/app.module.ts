@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 // Modules
 import { SharedModule } from './shared/shared.module';
 import { DataAnalysisModule } from './extensions/data-analysis/data-analysis.module';
+import { StatisticsModule } from './extensions/statistics/statistics.module';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { DataAnalysisModule } from './extensions/data-analysis/data-analysis.mod
     AppRoutingModule,
     SharedModule,
     DataAnalysisModule,
+    StatisticsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
