@@ -3,6 +3,12 @@ import creds from './client_secret.json';
 const promisify = f => (...args) => new Promise((a,b)=>f(...args, (err, res) => err ? b(err) : a(res)));
 const GoogleSpreadsheetURLSubstr = '1r02yIW2mcrjPRXSFzS-yhDERObquGxvkGt2uOXUG7Lo'; // Can make this dynamic
 
+const Tabs = {
+    Default: 0,
+    BaseData: 0,
+    Moves: 1
+}
+
 class SpreadsheetAPI {
     promisify;
     creds;
@@ -24,11 +30,11 @@ class SpreadsheetAPI {
         return log;
     }
 
-    async getRows() {
+    async getRows(tabName) {
         const doc = new GoogleSpreadsheet(GoogleSpreadsheetURLSubstr);
         await promisify(doc.useServiceAccountAuth)(creds);
         const info = await promisify(doc.getInfo)();
-        const sheet = info.worksheets[0];
+        const sheet = info.worksheets[Tabs[tabName]];
 
         const rows = await promisify(sheet.getRows)({
             offset: 1

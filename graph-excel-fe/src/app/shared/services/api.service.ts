@@ -22,11 +22,17 @@ export class APIService {
   //     .map(response: Response)
   // })
 
-  get(url: string): Observable<any> {
-    // return this.http.get(`${this.environment.endpoint}${url}`); // JSON
+  get(url: string, params?: any): Observable<any> {
     console.log('Making GET API call to...');
-    console.log(`${this.environment.endpoint}${url}`);
-    return this.http.get(`${this.environment.endpoint}${url}`, {responseType: 'json'}); // TEXT
+
+    let urlParam = '';
+    for (const p in params) {
+      urlParam += urlParam + p + '=' + params[p];
+    }
+    urlParam = urlParam !== '' ? '?' + urlParam : '';
+
+    console.log(`${this.environment.endpoint}${url}${urlParam}`);
+    return this.http.get(`${this.environment.endpoint}${url}${urlParam}`, {responseType: 'json'}); // TEXT
   }
 
   post(url: string, params?:any): Observable<any> {

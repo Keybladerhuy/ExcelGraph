@@ -31,5 +31,9 @@ export class LayoutComponent implements OnInit {
       this.sizes.percent.rightSize = sizes[1];
     }
   }
+  
+  switchActive(event: any) {
+    event.target.classList.add('active');
+  }
 
 }

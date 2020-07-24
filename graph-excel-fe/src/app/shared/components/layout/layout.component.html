@@ -5,9 +5,8 @@
             <i class="content icon"></i>
         </a>
         <div class="header item">XGraphs</div>
-        <a class="item active">Data Analysis</a>
-        <a class="item">Statistics</a>
-        <a class="item">Informatics</a>
+        <a class="item" routerLink="/Informatics/" routerLinkActive="active" (click)="switchActive($event)">Informatics</a>
+        <a class="item" routerLink="/Statistics/" routerLinkActive="active" (click)="switchActive($event)">Statistics</a>
         <a class="item">Team Management</a>
         <a class="item">Coverage</a>
         <a class="item">Movesets</a>
@@ -26,5 +25,4 @@
         </div>
     </div>
 </div>
-
 

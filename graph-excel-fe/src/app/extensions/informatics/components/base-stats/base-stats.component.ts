@@ -32,19 +32,15 @@ export class BaseStatsComponent implements OnInit {
   ngOnInit(): void {
     console.log('Welcome to Base Stats');
 
-    this.api.get('/api/get_rows').subscribe(res => this.rowData = res);
-    this.api.get('/api/get_rows').subscribe(res => {
+    this.api.get('/api/get_rows', {tabName: 'BaseData'}).subscribe(res => {
       this.rowData = res
       this.plotTable();
     });
-
   }
 
   plotTable() {
     console.log('rowData:', this.rowData);
     console.log('Plotting Table...');
-
-
   }
 
 }

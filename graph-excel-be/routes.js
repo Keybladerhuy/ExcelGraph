@@ -19,7 +19,8 @@ router.get('/api/get_sheet_info', (req, res) => {
 });
 
 router.get('/api/get_rows', (req, res) => {
-    API.getRows().then((result) => {res.send(result);});
+    const tabName = req.query.tabName ? req.query.tabName : 'Default';
+    API.getRows(tabName).then((result) => {res.send(result);});
 });
 
 export default router;

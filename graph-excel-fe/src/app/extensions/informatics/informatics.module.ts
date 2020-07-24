@@ -4,26 +4,30 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SharedModule } from '../../shared/shared.module';
 
-import { DataAnalysisComponent } from './data-analysis.component';
+import { InformaticsComponent } from './informatics.component';
 import { BaseStatsComponent } from './components/base-stats/base-stats.component';
 import { RoleComponent } from './components/role/role.component';
+import { MovesComponent } from './components/moves/moves.component';
+import { AbilitiesComponent } from './components/abilities/abilities.component';
 
 const routes: Routes = [
   {
-    path: 'DataAnalysis',
-    component: DataAnalysisComponent,
+    path: 'Informatics',
+    component: InformaticsComponent,
     data: {
-      title: 'Data Analysis'
+      title: 'Informatics'
     },
     children: [
         { path: 'BaseStats', component: BaseStatsComponent },
+        { path: 'Moves', component: MovesComponent },
+        { path: 'Abilities', component: AbilitiesComponent },
         { path: 'Role', component: RoleComponent },
     ]
   }
 ]
 
 @NgModule({
-  declarations: [BaseStatsComponent, DataAnalysisComponent, RoleComponent],
+  declarations: [BaseStatsComponent, InformaticsComponent, RoleComponent, MovesComponent, AbilitiesComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -32,4 +36,4 @@ const routes: Routes = [
   // exports: [BaseStatsComponent, DataAnalysisComponent], 
   // providers: []
 })
-export class DataAnalysisModule { }
+export class InformaticsModule { }

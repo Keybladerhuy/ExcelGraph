@@ -9,9 +9,8 @@ import { AppComponent } from './app.component';
 
 // Modules
 import { SharedModule } from './shared/shared.module';
-import { DataAnalysisModule } from './extensions/data-analysis/data-analysis.module';
+import { InformaticsModule } from './extensions/informatics/informatics.module';
 import { StatisticsModule } from './extensions/statistics/statistics.module';
-
 
 @NgModule({
   declarations: [
@@ -22,7 +21,7 @@ import { StatisticsModule } from './extensions/statistics/statistics.module';
     HttpClientModule,
     AppRoutingModule,
     SharedModule,
-    DataAnalysisModule,
+    InformaticsModule,
     StatisticsModule
   ],
   providers: [],

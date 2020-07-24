@@ -14,7 +14,7 @@ export class TotalStatsComponent implements OnInit {
 
   @ViewChild(BarChartComponent) chart: BarChartComponent;
 
-  showDataCount: number = 5;
+  showDataCount: number = 30;
   title = 'Highest Total Stats Pokemon';
 
   chartOptions = {

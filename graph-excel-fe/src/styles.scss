@@ -9,6 +9,11 @@
 @import 'ag-grid-community/dist/styles/ag-grid.css';
 @import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 
+* {
+    font-family: "Century Gothic";
+    // font-family: "Scandia";
+}
+
 .u-mt-10 {
     margin-top: 10px !important;
 }
